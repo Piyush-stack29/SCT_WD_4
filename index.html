@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Web Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-wrapper">
+
+        <!-- Header -->
+        <header class="app-header">
+            <h1><span class="icon">📝</span> To-Do List</h1>
+            <p class="subtitle">Stay organized, stay productive</p>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-card total">
+                <span class="stat-number" id="total-count">0</span>
+                <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-card completed">
+                <span class="stat-number" id="completed-count">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-card pending">
+                <span class="stat-number" id="pending-count">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+        </div>
+
+        <!-- Add Task Form -->
+        <form id="task-form" class="task-form">
+            <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off" required />
+            <input type="datetime-local" id="task-datetime" />
+            <button type="submit" class="btn btn-add">
+                <span>+</span> Add Task
+            </button>
+        </form>
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Task List -->
+        <ul id="task-list" class="task-list"></ul>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state">
+            <div class="empty-icon">🗂️</div>
+            <p>No tasks here. Add one above to get started!</p>
+        </div>
+
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal-overlay hidden" id="edit-modal">
+        <div class="modal-box">
+            <h2>Edit Task</h2>
+            <input type="text" id="edit-input" placeholder="Task name" />
+            <input type="datetime-local" id="edit-datetime" />
+            <div class="modal-actions">
+                <button id="edit-cancel" class="btn btn-secondary">Cancel</button>
+                <button id="edit-save" class="btn btn-add">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
