@@ -58,6 +58,6 @@ The To-Do Web Application allows users to:
 
 ## Author
 
-**Bhaskar Sharma**
+**Piyush Tyagi**
 
 SkillCraft Technology – Web Development Intern
